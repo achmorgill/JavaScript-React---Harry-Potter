@@ -6,7 +6,8 @@ class HarryPotterContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: []
+      characters: [],
+      focusCharacter: null
     }
   }
 
@@ -23,16 +24,21 @@ componentDidMount() {
 
     this.setState({ characters: data })
     console.log(data)
+    console.log(this.state)
   }
   request.send()
 }
+
+setFocusCharacter( character ) {
+  this.setState({focusCharacter: character})
+} 
 
 render() {
 
   return (
     <div>
       <h2>Harry Potter Characters</h2>
-     
+      <HarryPotterSelector characters={this.state.characters} selectCharacter={this.setFocusCharacter.bind(this)}/>
       <h2>Details</h2>
 
     </div>
