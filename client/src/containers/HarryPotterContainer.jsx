@@ -39,8 +39,7 @@ render() {
     <div>
       <h2>Harry Potter Characters</h2>
       <HarryPotterSelector characters={this.state.characters} selectCharacter={this.setFocusCharacter.bind(this)}/>
-      <h2>Details</h2>
-
+      <HarryPotterDetails character={this.state.focusCharacter}/>
     </div>
     )
 }
